@@ -14,7 +14,7 @@ function App() {
   const [horoscope, setHoroscope] = useState('');
 
   useEffect(() => {
-    const userLanguage = window.Telegram.WebApp.initDataUnsafe.user.language;
+    const userLanguage = window.Telegram.WebApp.initDataUnsafe.user.language_code;
     setLanguage(userLanguage === 'ru' ? 'ru' : 'en');
   }, []);
 
