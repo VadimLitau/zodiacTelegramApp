@@ -11,7 +11,7 @@ import sagittarius from "../icons/sagittarius.webp";
 import capricorn from "../icons/capricorn.webp";
 import pisces from "../icons/pisces.webp";
 
-export const zodiacSigns = [
+const zodiacSignsRus = [
 	{ sign: "aries", name: "Овен", period: "21 марта - 19 апреля", icon: aries },
 	{
 		sign: "taurus",
@@ -80,3 +80,55 @@ export const zodiacSigns = [
 		icon: pisces,
 	},
 ];
+
+const zodiacSignsEng = [
+	{ sign: "aries", name: "Aries", period: "March 21 - April 19", icon: aries },
+	{ sign: "taurus", name: "Taurus", period: "April 20 - May 20", icon: taurus },
+	{ sign: "gemini", name: "Gemini", period: "May 21 - June 20", icon: gemini },
+	{ sign: "cancer", name: "Cancer", period: "June 21 - July 22", icon: cancer },
+	{ sign: "leo", name: "Leo", period: "July 23 - August 22", icon: leo },
+	{
+		sign: "virgo",
+		name: "Virgo",
+		period: "August 23 - September 22",
+		icon: virgo,
+	},
+	{
+		sign: "libra",
+		name: "Libra",
+		period: "September 23 - October 22",
+		icon: libra,
+	},
+	{
+		sign: "scorpio",
+		name: "Scorpio",
+		period: "October 23 - November 21",
+		icon: scorpio,
+	},
+	{
+		sign: "sagittarius",
+		name: "Sagittarius",
+		period: "November 22 - December 21",
+		icon: sagittarius,
+	},
+	{
+		sign: "capricorn",
+		name: "Capricorn",
+		period: "December 22 - January 19",
+		icon: capricorn,
+	},
+	{
+		sign: "aquarius",
+		name: "Aquarius",
+		period: "January 20 - February 18",
+		icon: aquarius,
+	},
+	{
+		sign: "pisces",
+		name: "Pisces",
+		period: "February 19 - March 20",
+		icon: pisces,
+	},
+];
+
+export { zodiacSignsRus, zodiacSignsEng };

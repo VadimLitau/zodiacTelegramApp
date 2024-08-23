@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ZodiacCard from './components/ZodiacCard';
 import ZodiacDetails from './components/ZodiacDetails';
 import { getZodiacDescription } from './api/zodiacApi';
-import { zodiacSigns } from './data/zodiacData'
+import { zodiacSignsRus, zodiacSignsEng } from './data/zodiacData'
 import './App.css';
 
 
@@ -14,7 +14,7 @@ function App() {
   const [horoscope, setHoroscope] = useState('');
 
   useEffect(() => {
-    const userLanguage = window.Telegram.WebApp.initDataUnsafe.user.language_code;
+    const userLanguage = window.Telegram.WebApp.initDataUnsafe;
     setLanguage(userLanguage === 'ru' ? 'ru' : 'en');
   }, []);
 
@@ -30,6 +30,7 @@ function App() {
 
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === 'ru' ? 'en' : 'ru'));
+    handleZodiacClick()
   };
 
   return (
@@ -39,7 +40,7 @@ function App() {
       </button>
       {!selectedZodiac ? (
         <div className="zodiac-grid">
-          {zodiacSigns.map((zodiac) => (
+          {(language === 'ru' ? zodiacSignsRus : zodiacSignsEng).map((zodiac) => (
             <ZodiacCard key={zodiac.sign} zodiac={zodiac} onClick={handleZodiacClick} />
 
           ))}
