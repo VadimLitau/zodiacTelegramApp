@@ -13,9 +13,22 @@ function App() {
   const [selectedZodiac, setSelectedZodiac] = useState(null);
   const [horoscope, setHoroscope] = useState('');
   useEffect(() => {
-    const userLanguage = window.Telegram?.WebApp?.initDataUnsafe?.user?.language_code ||
-      window.Telegram?.WebApp?.initDataUnsafe?.language_code;
-    setLanguage(userLanguage === 'ru' ? 'ru' : 'en');
+    if (window.Telegram && window.Telegram.WebApp) {
+      // Получаем язык пользователя
+      const userLanguage = window.Telegram.WebApp.initDataUnsafe?.user?.language_code;
+
+      // Логика в зависимости от языка пользователя
+      if (userLanguage === 'ru') {
+        console.log('Пользователь использует русский язык.');
+        setLanguage('ru')
+      } else {
+        console.log('Пользователь использует другой язык:', userLanguage);
+        setLanguage('en')
+      }
+    } else {
+      console.error('Telegram WebApp API не доступен.');
+    }
+
   }, []);
 
   const handleZodiacClick = async (sign) => {
