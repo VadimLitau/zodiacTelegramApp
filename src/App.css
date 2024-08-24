@@ -54,7 +54,8 @@ body {
 	color: var(--primary-color);
 }
 
-.zodiac-card p {
+.zodiac-card p,
+.demonstration_lang {
 	font-size: 14px;
 	color: var(--secondary-color);
 }

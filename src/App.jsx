@@ -46,8 +46,8 @@ function App() {
 
   return (
     <div className="app">
-      <p>tgLang_{test}</p>
-      <p>{language}</p>
+      <p className='demonstration_lang'>Язык Интерфейса: {test}</p>
+      <p className='demonstration_lang'>Язык Приложения {language}</p>
       <button onClick={toggleLanguage}>
         {language === 'ru' ? 'Switch to English' : 'Переключить на русский'}
       </button>
