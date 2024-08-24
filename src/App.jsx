@@ -9,12 +9,11 @@ import './App.css';
 
 
 function App() {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('ru');
   const [selectedZodiac, setSelectedZodiac] = useState(null);
   const [horoscope, setHoroscope] = useState('');
-
   useEffect(() => {
-    const userLanguage = window.Telegram.WebApp.initDataUnsafe.user.language_code;
+    const userLanguage = window.Telegram?.WebApp?.languageCode;
     setLanguage(userLanguage === 'ru' ? 'ru' : 'en');
   }, []);
 
