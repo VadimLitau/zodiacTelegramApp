@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
       // Получаем язык пользователя
-      const userLanguage = window.Telegram.WebApp.initDataUnsafe?.user?.language_code;
+      const userLanguage = window.Telegram.WebApp.initDataUnsafe?.language_code;
       setTest(userLanguage)
       // Логика в зависимости от языка пользователя
       if (userLanguage === 'ru') {
