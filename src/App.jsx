@@ -12,11 +12,12 @@ function App() {
   const [language, setLanguage] = useState('en');
   const [selectedZodiac, setSelectedZodiac] = useState(null);
   const [horoscope, setHoroscope] = useState('');
+  const [test, setTest] = useState('');
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
       // Получаем язык пользователя
       const userLanguage = window.Telegram.WebApp.initDataUnsafe?.user?.language_code;
-
+      setTest(userLanguage)
       // Логика в зависимости от языка пользователя
       if (userLanguage === 'ru') {
         console.log('Пользователь использует русский язык.');
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <div className="app">
+      <p>tgLang_{test}</p>
       <p>{language}</p>
       <button onClick={toggleLanguage}>
         {language === 'ru' ? 'Switch to English' : 'Переключить на русский'}
