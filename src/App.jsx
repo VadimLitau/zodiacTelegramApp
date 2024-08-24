@@ -48,6 +48,7 @@ function App() {
 
   return (
     <div className="app">
+      <p>{language}</p>
       <button onClick={toggleLanguage}>
         {language === 'ru' ? 'Switch to English' : 'Переключить на русский'}
       </button>
