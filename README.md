@@ -1,8 +1,23 @@
-# React + Vite
+# Telegram App - Zodiac
+Репозиторий представляет собой простое телеграмм веб приложение.
+Основная задача была демонстрации знаков зодиака, гороскопа на день и смены языка.
+Основная верстка, часть логики и стилизация была сгенерирована при помощи ChatGPT4 для ускорения процесса.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+В ходе разработки было замечено что Английский язык интерфейса программы, приложением воспринимается как русский. Для демонстрации этого процесса были добавлены несколько строк, которые показывают какой язык на данный момент в интерфейсе и в приложении.
+Если язык отличный от русского или английского, приложение переключает интерфейс на английский.
+С этим моментом в последствии следует разобраться.
 
-Currently, two official plugins are available:
+![машина](https://raw.githubusercontent.com/VadimLitau/zodiacTelegramApp/main/src/icons/capricorn.webp)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Демо - веб версия](https://vadimlitau.github.io/Tere/https://zodiac-telegram-app-vadimlitaus-projects.vercel.app/)
+
+[Бот в Tg](https://t.me/reactZodiacTest_bot)
+
+## **Технологии**: *react, css, vite*.
+
+## Сборка проекта:
+**npm i** - установка пакетов
+**npm run dev** - сборка проекта для разработки.
+
+Т.к в проекте практически не используются сторонние модули, то было решено не делать продакш сборку. Под продакшн хорошо подходит дев бандл.
+
