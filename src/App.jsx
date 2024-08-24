@@ -14,17 +14,13 @@ function App() {
   const [horoscope, setHoroscope] = useState('');
   const [test, setTest] = useState('');
   useEffect(() => {
-    if (window.Telegram && window.Telegram.WebApp) {
-      const userLanguage = window.Telegram.WebApp.initDataUnsafe?.user?.language_code;
-      setTest(userLanguage)
-      // Логика в зависимости от языка пользователя
-      if (userLanguage === 'ru') {
-        setLanguage('ru')
-      } else {
-        setLanguage('en')
-      }
+    const userLanguage = window.Telegram.WebApp.initDataUnsafe?.user?.language_code;
+    setTest(userLanguage)
+    // Логика в зависимости от языка пользователя
+    if (userLanguage === 'ru') {
+      setLanguage('ru')
     } else {
-      console.error('Telegram WebApp API не доступен.');
+      setLanguage('en')
     }
 
   }, []);
