@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import ZodiacCard from './components/ZodiacCard';
 import ZodiacDetails from './components/ZodiacDetails';
-import { getZodiacDescription } from './api/zodiacApi';
+// import { getHoroscope } from './api/zodiacApi';
 import { zodiacSignsRus, zodiacSignsEng } from './data/zodiacData'
 import './App.css';
+import { getRandomHoroscope } from './helpers/getHoroscope';
+import { translateText } from './api/zodiacApi';
 
 
 
@@ -13,8 +15,8 @@ function App() {
   const [selectedZodiac, setSelectedZodiac] = useState(null);
   const [horoscope, setHoroscope] = useState('');
   const [test, setTest] = useState('');
+  const userLanguage = window.Telegram.WebApp.initDataUnsafe?.user?.language_code;
   useEffect(() => {
-    const userLanguage = window.Telegram.WebApp.initDataUnsafe?.user?.language_code;
     setTest(userLanguage)
     // Логика в зависимости от языка пользователя
     if (userLanguage === 'ru') {
@@ -22,13 +24,17 @@ function App() {
     } else {
       setLanguage('en')
     }
-
   }, []);
 
   const handleZodiacClick = async (sign) => {
-    const horoscope = await getZodiacDescription(sign, language);
-    setHoroscope(horoscope);
+    const horoscopeText = getRandomHoroscope();
+    if (userLanguage === 'ru') {
+      setHoroscope(horoscopeText);
+    } else {
+      setHoroscope(await translateText(horoscopeText, 'ru', 'en'))
+    }
     setSelectedZodiac(sign);
+
   };
   const handleBack = () => {
     setSelectedZodiac(null);
