@@ -11,7 +11,7 @@
 
 ![машина](https://raw.githubusercontent.com/VadimLitau/zodiacTelegramApp/main/src/icons/capricorn.webp)
 
-[Демо - веб версия](https://vadimlitau.github.io/Tere/https://zodiac-telegram-app-vadimlitaus-projects.vercel.app/)
+[Демо - веб версия](https://zodiac-telegram-app-vadimlitaus-projects.vercel.app/)
 
 [Бот в Tg](https://t.me/reactZodiacTest_bot)
 
