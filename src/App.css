@@ -23,11 +23,12 @@ body {
 
 .zodiac-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	gap: 20px;
 	margin-top: 20px;
 }
-
+.zodiac-grid_location {
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
 .zodiac-card {
 	background-color: var(--card-background);
 	padding: 20px;
@@ -88,7 +89,7 @@ body {
 }
 
 .back-button:hover {
-	background-color: #e57373;
+	background-color: #588e7b;
 }
 
 .toggle-language {
@@ -135,11 +136,6 @@ button:active {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Эффект фокуса для клавиатуры */
-button:focus {
-	outline: 3px solid var(--accent-color);
-}
-
 /* Стили для кнопки переключения языка */
 .toggle-language {
 	margin-bottom: 20px;
@@ -152,9 +148,31 @@ button:focus {
 }
 
 .back-button:hover {
-	background-color: #e57373;
+	background-color: #588e7b;
 }
 
-.back-button:active {
-	background-color: #c75959;
+.loader-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 99vh;
+	width: 99vw;
+}
+
+.loader-ring {
+	border: 8px solid #f3f3f3; /* Light grey */
+	border-top: 8px solid #588e7b; /* Blue */
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

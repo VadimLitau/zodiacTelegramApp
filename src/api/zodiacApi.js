@@ -17,6 +17,7 @@ export async function translateText(text, sourceLang, targetLang) {
 			)}`
 		);
 		const data = await response.json();
+		console.log(data.translation);
 		return data.translation; // Полученный перевод
 	} catch (error) {
 		return "Error translating text:", error;
